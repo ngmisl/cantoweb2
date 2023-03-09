@@ -4,7 +4,7 @@ import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "./constants/index"
 import styles from "../styles/Home.module.css"
 
-export default function Home() {
+export default function TotalSupply() {
   // walletConnected keep track of whether the user's wallet is connected or not
   const [walletConnected, setWalletConnected] = useState(false);
   // loading is set to true when we are waiting for a transaction to get mined
