@@ -182,7 +182,6 @@ export default function Home() {
           <div className={styles.description}>
             {tokenIdsMinted}/555 have been minted
           </div>
-          {renderButton()}
         </div>
 
     </div>
