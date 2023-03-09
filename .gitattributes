@@ -1,0 +1,5 @@
+public/build/* filter=lfs diff=lfs merge=lfs -text
+public/build/Test.data filter=lfs diff=lfs merge=lfs -text
+public/build/Test.framework.js filter=lfs diff=lfs merge=lfs -text
+public/build/Test.loader.js filter=lfs diff=lfs merge=lfs -text
+public/build/Test.wasm filter=lfs diff=lfs merge=lfs -text

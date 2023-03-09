@@ -1,0 +1,12 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NaviConnect from '~/components/mint/NaviConnect';
+
+const title = 'Cantoverse NFT Mint';
+---
+
+<Layout meta={{ title }}>
+  <div class="flex justify-center">
+    <NaviConnect client:load />
+  </div>
+</Layout>
