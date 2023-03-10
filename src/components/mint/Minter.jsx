@@ -31,14 +31,19 @@ const StyledButton = styled.button`
 
 export function MintNFT() {
   const { config } = usePrepareContractWrite({
-    address: '0x4094541DfBF0A24f10A9597832856b09005Cb094',
+    address: '0x87a3c277Ebf880e28F7eb57fD94b72Bd51f65784',
     abi: [
       {
         name: 'safeMint',
         type: 'function',
         stateMutability: 'payable',
         inputs: [],
-        outputs: [],
+        outputs: [{
+          internalType: 'uint256',
+          name: '',
+          type: 'uint256',
+        },
+        ],
       },
     ],
     functionName: 'safeMint',
