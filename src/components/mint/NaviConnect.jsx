@@ -1,15 +1,15 @@
 import React from 'react';
 import { WagmiConfig, createClient } from 'wagmi';
-import { polygon } from 'wagmi/chains';
+import { cantotest } from './CantoTestnet';
 import { ConnectKitProvider, getDefaultClient } from 'connectkit';
 import { App } from './App';
 
-
+const chains = [cantotest];
 
 const client = createClient(
   getDefaultClient({
     appName: 'MintWorld Connector',
-    chains: [polygon],
+    chains: chains,
   })
 );
 

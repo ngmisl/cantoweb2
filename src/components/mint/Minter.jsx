@@ -31,17 +31,17 @@ const StyledButton = styled.button`
 
 export function MintNFT() {
   const { config } = usePrepareContractWrite({
-    address: '0x570c934ffa07de37a9ec1639bd58f5ffc03494dd',
+    address: '0x4094541DfBF0A24f10A9597832856b09005Cb094',
     abi: [
       {
-        name: 'mintNFT',
+        name: 'safeMint',
         type: 'function',
-        stateMutability: 'nonpayable',
+        stateMutability: 'payable',
         inputs: [],
-        outputs: [{"internalType":"uint256","name":"","type":"uint256"}],
+        outputs: [],
       },
     ],
-    functionName: 'mintNFT',
+    functionName: 'safeMint',
   })
   const { data, write } = useContractWrite(config)
  
@@ -58,7 +58,7 @@ export function MintNFT() {
         <div>
           Successfully minted your NFT!
           <div>
-            <a href={`https://polygonscan.com/tx/${data?.hash}`}>Polygonscan</a>
+            <a href={`https://testnet.tuber.build/tx/${data?.hash}`}>Canto Testnet</a>
           </div>
         </div>
       )}
