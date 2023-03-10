@@ -1,6 +1,6 @@
 import { Contract, providers, utils } from "ethers";
 import React, { useEffect, useRef, useState } from "react";
-import Web3Modal from "web3modal";
+import Web3Modal, { local } from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "./constants";
 import styles from "./styles/Home.module.css";
 
@@ -12,6 +12,7 @@ export default function Home() {
   // tokenIdsMinted keeps track of the number of tokenIds that have been minted
   const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
   // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
+  const [tokenIds, setTokenId] = useState("555");
   const web3ModalRef = useRef();
 
   /**
@@ -33,12 +34,12 @@ export default function Home() {
       // get the tokenId from the event logs emitted by the contract
       const tokenId = receipt.events[0].args.tokenId.toNumber();
       console.log("token ID:", tokenId);
+      setTokenId(tokenId.toString());
     } catch (err) {
       console.error(err);
     }
   };
   
-
   /*
         connectWallet: Connects the MetaMask wallet
       */
@@ -171,7 +172,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-        <img className={styles.image} src={`https://bafybeicasntv56sexalprbpgiiemuzczmqb2oxrudlp7m3si4lx2zmud2e.ipfs.nftstorage.link/welcome-to-cantoverse_${tokenIdsMinted}.jpg`} />
+        <img className={styles.image} src={`https://bafybeicasntv56sexalprbpgiiemuzczmqb2oxrudlp7m3si4lx2zmud2e.ipfs.nftstorage.link/welcome-to-cantoverse_${tokenIds}.jpg`} />
         </div>
       </div>
 
