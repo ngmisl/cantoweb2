@@ -120,9 +120,9 @@ export default function TotalSupply() {
 
     // If user is not connected to the Polygon network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 137) {
-      window.alert("Change the network to Polygon");
-      throw new Error("Change network to Polygon");
+    if (chainId !== 7701) {
+      window.alert("Change the network to Canto Testnet");
+      throw new Error("Change network to Testnet");
     }
 
     if (needSigner) {

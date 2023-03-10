@@ -58,7 +58,7 @@ export function MintNFT() {
         <div>
           Successfully minted your NFT!
           <div>
-            <a href={`https://polygonscan.com/tx/${data?.hash}`}>Etherscan</a>
+            <a href={`https://polygonscan.com/tx/${data?.hash}`}>Polygonscan</a>
           </div>
         </div>
       )}
