@@ -1,23 +1,21 @@
 import { Contract, providers, utils } from "ethers";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
-import { abi, NFT_CONTRACT_ADDRESS } from "./constants/index"
-import styles from "./styles/Home.module.css"
+import { abi, NFT_CONTRACT_ADDRESS } from "./constants";
+import styles from "./styles/Home.module.css";
 
-export default function TotalSupply() {
+export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
   const [walletConnected, setWalletConnected] = useState(false);
   // loading is set to true when we are waiting for a transaction to get mined
   const [loading, setLoading] = useState(false);
-  // checks if the currently connected MetaMask wallet is the owner of the contract
-  const [isOwner, setIsOwner] = useState(false);
   // tokenIdsMinted keeps track of the number of tokenIds that have been minted
   const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
   // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
   const web3ModalRef = useRef();
 
   /**
-   * publicMint: Mint an NFT after the presale
+   * publicMint: Mint an NFT
    */
   const publicMint = async () => {
     try {
@@ -26,22 +24,24 @@ export default function TotalSupply() {
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-      // call the mint from the contract to mint the Crypto Dev
-      const tx = await nftContract.mintNFT({
-        });
+      // call the mint from the contract to mint
+      const tx = await nftContract.safeMint();
       setLoading(true);
       // wait for the transaction to get mined
-      await tx.wait();
+      const receipt = await tx.wait();
       setLoading(false);
-      window.alert("You successfully minted");
+      // get the tokenId from the event logs emitted by the contract
+      const tokenId = receipt.events[0].args.tokenId.toNumber();
+      console.log("token ID:", tokenId);
     } catch (err) {
       console.error(err);
     }
   };
+  
 
   /*
-      connectWallet: Connects the MetaMask wallet
-    */
+        connectWallet: Connects the MetaMask wallet
+      */
   const connectWallet = async () => {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
@@ -50,33 +50,6 @@ export default function TotalSupply() {
       setWalletConnected(true);
     } catch (err) {
       console.error(err);
-    }
-  };
-
-
-
-  /**
-   * getOwner: calls the contract to retrieve the owner
-   */
-  const getOwner = async () => {
-    try {
-      // Get the provider from web3Modal, which in our case is MetaMask
-      // No need for the Signer here, as we are only reading state from the blockchain
-      const provider = await getProviderOrSigner();
-      // We connect to the Contract using a Provider, so we will only
-      // have read-only access to the Contract
-      const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
-      // call the owner function from the contract
-      const _owner = await nftContract.owner();
-      // We will get the signer now to extract the address of the currently connected MetaMask account
-      const signer = await getProviderOrSigner(true);
-      // Get the address associated to the signer which is connected to  MetaMask
-      const address = await signer.getAddress();
-      if (address.toLowerCase() === _owner.toLowerCase()) {
-        setIsOwner(true);
-      }
-    } catch (err) {
-      console.error(err.message);
     }
   };
 
@@ -93,6 +66,7 @@ export default function TotalSupply() {
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       // call the tokenIds from the contract
       const _tokenIds = await nftContract.totalSupply();
+      console.log("tokenIds", _tokenIds);
       //_tokenIds is a `Big Number`. We need to convert the Big Number to a string
       setTokenIdsMinted(_tokenIds.toString());
     } catch (err) {
@@ -118,11 +92,11 @@ export default function TotalSupply() {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
 
-    // If user is not connected to the Polygon network, let them know and throw an error
+    // If user is not connected to the Mumbai network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 7701) {
-      window.alert("Change the network to Canto Testnet");
-      throw new Error("Change network to Testnet");
+      window.alert("Change the network to Mumbai");
+      throw new Error("Change network to Mumbai");
     }
 
     if (needSigner) {
@@ -131,6 +105,7 @@ export default function TotalSupply() {
     }
     return web3Provider;
   };
+
 
   // useEffects are used to react to changes in state of the website
   // The array at the end of function call represents what state changes will trigger this effect
@@ -141,10 +116,11 @@ export default function TotalSupply() {
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "polygon",
+        network: "canto testnet",
         providerOptions: {},
         disableInjectedProvider: false,
       });
+
       connectWallet();
 
       getTokenIdsMinted();
@@ -157,8 +133,8 @@ export default function TotalSupply() {
   }, [walletConnected]);
 
   /*
-      renderButton: Returns a button based on the state of the dapp
-    */
+        renderButton: Returns a button based on the state of the dapp
+      */
   const renderButton = () => {
     // If wallet is not connected, return a button which allows them to connect their wallet
     if (!walletConnected) {
@@ -173,17 +149,32 @@ export default function TotalSupply() {
     if (loading) {
       return <button className={styles.button}>Loading...</button>;
     }
-  }
 
+    return (
+      <button className={styles.button} onClick={publicMint}>
+        Public Mint 🌀
+      </button>
+    );
+  };
+ 
   return (
     <div>
-
+      <div className={styles.main}>
         <div>
+          <h1 className={styles.title}>Cantoverse Mint</h1>
+          <div className={styles.description}>
+            {/* Using HTML Entities for the apostrophe */}
+          </div>
           <div className={styles.description}>
             {tokenIdsMinted}/555 have been minted
           </div>
+          {renderButton()}
         </div>
+        <div>
+        <img className={styles.image} src={`https://bafybeicasntv56sexalprbpgiiemuzczmqb2oxrudlp7m3si4lx2zmud2e.ipfs.nftstorage.link/welcome-to-cantoverse_${tokenIdsMinted}.jpg`} />
+        </div>
+      </div>
 
-    </div>
+   </div>
   );
 }
