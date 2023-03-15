@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Game from '~/components/Entercnatoverse';
 
 const title = 'Cantoverse Gallery';
 ---
@@ -7,10 +8,8 @@ const title = 'Cantoverse Gallery';
 <Layout meta={{ title }}>
   <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
     <div class="flex justify-center items-center h-screen">
-      <iframe
-        src="https://gateway.lighthouse.storage/ipfs/QmPSp7KEpaqjgDJYkvoGhhJJ86yTh7VNTzN2wynWaV7h7A/"
-        width="1100"
-        height="700"></iframe>
+      <Game client:load />
     </div>
   </div>
+  <script is:inline src="/web3/index.js"></script>
 </Layout>

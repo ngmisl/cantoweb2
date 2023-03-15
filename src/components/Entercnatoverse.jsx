@@ -3,7 +3,7 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game() {
   const { unityProvider, isLoaded, loadingProgression, requestFullscreen } = useUnityContext({
-    loaderUrl: "build/Test.loader.js",
+    loaderUrl: "gallery/build/Test.loader.js",
     dataUrl: "build/Test.data",
     frameworkUrl: "build/Test.framework.js",
     codeUrl: "build/Test.wasm",
