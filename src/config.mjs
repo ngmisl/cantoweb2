@@ -1,9 +1,9 @@
-import defaultImage from './assets/images/hero.png';
+import defaultImage from './assets/images/hero.webp';
 
 const CONFIG = {
   name: 'CantoVerse',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://cantoverse.net',
   basePathname: '/',
   trailingSlash: false,
 
