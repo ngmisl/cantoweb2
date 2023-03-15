@@ -3,10 +3,10 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game() {
   const { unityProvider, isLoaded, loadingProgression, requestFullscreen } = useUnityContext({
-    loaderUrl: "build/Test.loader.js",
-    dataUrl: "build/Test.data",
-    frameworkUrl: "build/Test.framework.js",
-    codeUrl: "build/Test.wasm",
+    loaderUrl: "gallery/build/Test.loader.js",
+    dataUrl: "gallery/build/Test.data",
+    frameworkUrl: "gallery/build/Test.framework.js",
+    codeUrl: "gallery/build/Test.wasm",
   });
 
   function handleClickEnterFullscreen() {
