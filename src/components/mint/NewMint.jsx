@@ -1,4 +1,4 @@
-import { Contract, providers } from "ethers";
+{ ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/' },import { Contract, providers } from "ethers";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "./constants";

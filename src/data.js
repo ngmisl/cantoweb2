@@ -24,8 +24,7 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [
-  ],
+  links: [],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
@@ -42,6 +41,5 @@ export const footerData = {
       href: 'https://discord.gg/8DNhVnRXHd',
     },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/' },
   ],
 };

@@ -1,7 +1,7 @@
 import defaultImage from './assets/images/hero.webp';
 
 const CONFIG = {
-  name: 'CantoVerse',
+  name: 'Cantoverse',
 
   origin: 'https://cantoverse.net',
   basePathname: '/',
