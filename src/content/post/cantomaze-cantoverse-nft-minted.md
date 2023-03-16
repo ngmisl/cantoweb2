@@ -25,7 +25,7 @@ Head over to our website, enter the Cantoverse, and give your friends access to 
 
 Thank you once again for your support, and we hope to see you soon in the Cantoverse!
 
-* View your NFT in Cantoverse (and give friend exclusive access to it): [Cantoverse Gallery](https://cantoverse.net/gallery/)
+* View your NFT in Cantoverse (and give your friends exclusive access to it) [Cantoverse Gallery](https://cantoverse.net/gallery/)
 * Check on [Alto](https://alto.build/collections/cantoverse/)
 
 Best regards,
