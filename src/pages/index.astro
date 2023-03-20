@@ -20,7 +20,6 @@ const meta = {
   <Hero
     callToAction={{ text: 'Visit Gallery', href: '/gallery', icon: 'tabler:play' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    callToAction3={{ text: 'Free Mint', href: '/mint', icon: 'tabler:rocket' }}
     image={{ src: import('~/assets/images/hero.webp'), alt: 'Cantoverse Hero Image' }}
   >
     <Fragment slot="title">
@@ -89,13 +88,7 @@ const meta = {
     ]}
   />
 
-
   <!-- HighlightedPosts Widget ******* -->
 
-  <LatestPosts
-    title="Find out more content in our Blog"
-    information={''}
-    postIds={[]}
-  />
-
+  <LatestPosts title="Find out more content in our Blog" information={''} postIds={[]} />
 </Layout>

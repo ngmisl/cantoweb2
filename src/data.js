@@ -3,24 +3,10 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Gallery',
-          href: '/gallery',
-        },
-        {
-          text: 'Free Mint',
-          href: '/mint',
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      href: getBlogPermalink(),
+
     },
   ],
-  actions: [{ type: 'button', text: 'Visit Gallery', href: '/gallery' }],
+  actions: [{ type: 'button', text: 'Blog', href: getBlogPermalink() }, { type: 'button', text: 'Visit Gallery', href: '/gallery' }],
 };
 
 export const footerData = {
