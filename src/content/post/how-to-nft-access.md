@@ -15,19 +15,19 @@ tags:
 
 * Login to the [Gallery](https://cantoverse.net/gallery)
 * Click `Menu` Button
-![Cantoverse Gallery Menu Button](src/assets/images/blog/howto/1.webp)
+![Cantoverse Gallery Menu Button](~/assets/images/blog/howto/1.webp)
 * Choose `Options`
-![Cantoverse Gallery Options Button](src/assets/images/blog/howto/2.webp)
+![Cantoverse Gallery Options Button](~/assets/images/blog/howto/2.webp)
 * Click `Manage Invitations` Button
-![Cantoverse Gallery Manage Invitations Button](src/assets/images/blog/howto/3.webp)
+![Cantoverse Gallery Manage Invitations Button](~/assets/images/blog/howto/3.webp)
 * Find your NFT ID
 
 *Note: Until our Marketplace is ready, the quickest way to do it is to check your [Alto Profile](https://alto.build/profile)*
 
-![Cantoverse Gallery Manage Invitations Button](src/assets/images/blog/howto/4.webp)
+![Cantoverse Gallery Manage Invitations Button](~/assets/images/blog/howto/4.webp)
 
 * Enter your friends Wallet Address & Your Cantoverse NFT ID
-![Cantoverse Gallery Manage Invitations Button](src/assets/images/blog/howto/5.webp)
+![Cantoverse Gallery Manage Invitations Button](~/assets/images/blog/howto/5.webp)
 * Click `Give Access`
   
 And confirm the transaction.
