@@ -1,12 +1,12 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
-  links: [
-    {
-
-    },
+  links: [{}],
+  actions: [
+    { type: 'button', text: 'Blog', href: getBlogPermalink() },
+    { type: 'button', text: 'Maze', href: '/maze' },
+    { type: 'button', text: 'Visit Gallery', href: '/gallery' },
   ],
-  actions: [{ type: 'button', text: 'Blog', href: getBlogPermalink() }, { type: 'button', text: 'Visit Gallery', href: '/gallery' }],
 };
 
 export const footerData = {

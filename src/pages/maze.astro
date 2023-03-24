@@ -1,0 +1,10 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NFTWallet from '~/components/widgets/NFTWallet';
+
+const title = 'Canto Maze';
+---
+
+<Layout meta={{ title }}>
+  <NFTWallet client:load />
+</Layout>
