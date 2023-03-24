@@ -1,6 +1,6 @@
 ---
 publishDate: 2023-03-24T15:12:00Z
-title: Embark on a Mystical Journey with "Enter The Maze"
+title: Embark on a Mystical Journey with Enter The Maze
 excerpt: Discover the CantoMaze - A thrilling, fantastical journey into the heart of Cantoverse NFTs. Unravel secrets & explore this enigmatic labyrinth now!
 image: ~/assets/images/the-maze.webp
 tags:
