@@ -167,10 +167,10 @@
   dependencies:
     undici "5.20.0"
 
-"@astrolib/analytics@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@astrolib/analytics/-/analytics-0.3.0.tgz#cdd4a4b33c36080785a436472083c42853d123d7"
-  integrity sha512-nwGiH7D6c+fnETlP/Gj51iirReo/9ftn8hYtKi5luiBpKDdUksDRDGh5Ni3PR2XPoHPRk5ah/Pk4IXyxUlR0Xg==
+"@astrolib/analytics@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@astrolib/analytics/-/analytics-0.6.1.tgz#1fa0d769d8e765ed1431d3b2a3311b0dc0c0bc9f"
+  integrity sha512-BrOGe88JuprEXhvLg1eJxaGcR9ZzuYPZE00QwcvQ1EBAucODxbg4FJG57G5yoAYjyXjr7GsPy4+46X2jB+64hg==
 
 "@astrolib/seo@^0.3.0":
   version "0.3.0"
